@@ -6,3 +6,9 @@ jobs:
     steps:
       - name: Output
         run: echo "$ {{ toJSON(github.event) }}"
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Deploy project
+        run: echo "Deploying...."
